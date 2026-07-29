@@ -210,7 +210,7 @@ dist/
 
 Software Engineer specializing in frontend development with React and TypeScript, currently expanding into full-stack systems and AI-powered product development.
 
-- Portfolio: [YOUR_PORTFOLIO_URL](https://dafemu.github.io/david-munoz-portfolio/)
-- LinkedIn: [YOUR_LINKEDIN_URL](https://www.linkedin.com/in/david-munoz-barco-004714121/)
+- Portfolio: [david-munoz-portfolio/](https://dafemu.github.io/david-munoz-portfolio/)
+- LinkedIn: [david-munoz-barco](https://www.linkedin.com/in/david-munoz-barco-004714121/)
 - GitHub: [github.com/dafemu](https://github.com/dafemu)
-- Email: [YOUR_EMAIL](mailto:david.f.do@hotmail.com)
+- Email: [Mailto:david.f.do@hotmail.com](mailto:david.f.do@hotmail.com)
