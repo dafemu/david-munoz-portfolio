@@ -53,3 +53,25 @@
   background: var(--color-accent-soft);
   color: var(--color-accent);
 }
+
+/* Quieter than --pill: sized for card footers, where the card is the subject. */
+.button--ghost {
+  padding: var(--space-xs) var(--space-xl);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-link);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-sm);
+  letter-spacing: var(--ls-mono-xs);
+}
+
+.button--ghost:hover {
+  border-color: var(--color-accent-border-hover);
+  color: var(--color-accent);
+}
+
+.button--disabled {
+  border-style: dashed;
+  border-color: var(--color-border-hairline);
+  color: var(--color-text-fainter);
+  cursor: not-allowed;
+}

@@ -3,6 +3,7 @@ import {
   ContactSection,
   ExperienceSection,
   HeroSection,
+  PersonalProjectsSection,
   ProjectsSection,
   SiteFooter,
   SiteHeader,
@@ -18,6 +19,9 @@ import {
   CONTACT_CONTENT,
   EXPERIENCE_ENTRIES,
   HERO_CONTENT,
+  PERSONAL_PROJECTS,
+  PERSONAL_PROJECTS_INTRO,
+  PERSONAL_PROJECT_LINK_LABELS,
   RESUME_LINK,
   SITE_CONFIG,
   STACK_GROUPS,
@@ -32,8 +36,9 @@ const SECTION_LABELS = {
   about: '01 / ABOUT',
   experience: '02 / EXPERIENCE',
   projects: '03 / PROJECTS',
-  stack: '04 / STACK',
-  contact: '05 / CONTACT',
+  personalProjects: '04 / PERSONAL',
+  stack: '05 / STACK',
+  contact: '06 / CONTACT',
 } as const;
 
 /** The only place where content sources meet presentation components. */
@@ -78,6 +83,13 @@ export const HomePage = () => {
         caseStudies={CASE_STUDIES}
         blockLabels={CASE_STUDY_BLOCK_LABELS}
         additionalEngagements={ADDITIONAL_ENGAGEMENTS}
+      />
+      <PersonalProjectsSection
+        sectionId="personal-projects"
+        label={SECTION_LABELS.personalProjects}
+        intro={PERSONAL_PROJECTS_INTRO}
+        projects={PERSONAL_PROJECTS}
+        linkLabels={PERSONAL_PROJECT_LINK_LABELS}
       />
       <StackSection sectionId="stack" label={SECTION_LABELS.stack} groups={STACK_GROUPS} />
       <ContactSection

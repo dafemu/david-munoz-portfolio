@@ -4,5 +4,6 @@ export type * from './hero.types';
 export type * from './about.types';
 export type * from './experience.types';
 export type * from './caseStudy.types';
+export type * from './personalProject.types';
 export type * from './stack.types';
 export type * from './contact.types';

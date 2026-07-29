@@ -1,0 +1,132 @@
+/**
+ * Lighter than .case-study-card on purpose: tighter padding, smaller radius,
+ * a subtler border. Side projects should never carry the same visual weight
+ * as the confidential client work above them.
+ */
+.personal-project-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-2xl);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  transition:
+    border-color var(--duration-base) var(--ease-standard),
+    opacity var(--duration-reveal) var(--ease-reveal) var(--reveal-delay, 0s),
+    transform var(--duration-reveal) var(--ease-reveal) var(--reveal-delay, 0s);
+}
+
+.personal-project-card:hover {
+  border-color: var(--color-accent-border-card);
+}
+
+/* ---- Media slot ---- */
+
+/**
+ * Placeholder until the real capture exists. Dashed edges read as "not final",
+ * and the aspect-ratio already reserves the exact space the media will take,
+ * so dropping it in later won't reflow the card.
+ */
+.personal-project-card__media {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-xl);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-raised);
+}
+
+/* Browser-shaped: dashboards and storefronts. */
+.personal-project-card__media--wide {
+  aspect-ratio: 16 / 10;
+}
+
+/**
+ * Phone-shaped: the device-framed mobile recording. Capped and centred rather
+ * than full-bleed — a portrait slot at the card's full width would tower over
+ * every other card and still not read as a phone.
+ */
+.personal-project-card__media--portrait {
+  aspect-ratio: 9 / 16;
+  width: 100%;
+  max-width: 240px;
+  margin-inline: auto;
+}
+
+.personal-project-card__media-badge {
+  align-self: flex-start;
+  padding: var(--space-3xs) var(--space-sm);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-xs);
+  letter-spacing: var(--ls-mono-sm);
+}
+
+.personal-project-card__media-todo {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-xs);
+  line-height: var(--lh-snug);
+  color: var(--color-text-faint);
+}
+
+/* The second capture is a separate deliverable, so it gets its own rule. */
+.personal-project-card__media-todo--secondary {
+  padding-top: var(--space-xs);
+  border-top: 1px solid var(--color-border-hairline);
+}
+
+/* ---- Body ---- */
+
+.personal-project-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  padding-top: var(--space-2xs);
+}
+
+.personal-project-card__title {
+  text-wrap: pretty;
+}
+
+.personal-project-card__domain {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-xs);
+  letter-spacing: var(--ls-mono-sm);
+  color: var(--color-text-fainter);
+}
+
+.personal-project-card__pitch {
+  text-wrap: pretty;
+}
+
+.personal-project-card__highlights {
+  gap: var(--space-2xs);
+}
+
+/* ---- Actions ---- */
+
+.personal-project-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: auto;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-hairline);
+}
+
+@media (max-width: 600px) {
+  .personal-project-card {
+    padding: var(--space-xl);
+  }
+
+  .personal-project-card__media {
+    padding: var(--space-md);
+  }
+}

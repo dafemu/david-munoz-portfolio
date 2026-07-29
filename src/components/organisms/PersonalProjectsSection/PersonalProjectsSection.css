@@ -1,0 +1,51 @@
+.personal-projects {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-section-gap);
+  padding: var(--space-section-y) 0;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.personal-projects__label {
+  flex: 0 0 var(--size-section-label);
+}
+
+.personal-projects__content {
+  flex: 1 1 min(100%, 460px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5xl);
+}
+
+.personal-projects__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.personal-projects__heading {
+  margin: 0;
+  font-size: var(--fs-role);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-snug);
+  color: var(--color-text-strong);
+}
+
+.personal-projects__note {
+  max-width: var(--measure-blurb);
+}
+
+/**
+ * The one structural break from the case studies: those are text-heavy and
+ * stay single-column, while these are short and media-led, so two columns
+ * signal "different kind of work" before a word is read.
+ */
+.personal-projects__grid {
+  display: grid;
+  /* min() guards the track floor: on a 320px phone the column would otherwise
+     be forced to 300px inside a ~280px rail and push the page sideways. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: var(--space-xl);
+  align-items: start;
+}

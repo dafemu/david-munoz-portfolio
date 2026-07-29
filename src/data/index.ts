@@ -8,5 +8,10 @@ export {
   CASE_STUDY_BLOCK_LABELS,
   ADDITIONAL_ENGAGEMENTS,
 } from './caseStudies.data';
+export {
+  PERSONAL_PROJECTS,
+  PERSONAL_PROJECTS_INTRO,
+  PERSONAL_PROJECT_LINK_LABELS,
+} from './personalProjects.data';
 export { STACK_GROUPS } from './stack.data';
 export { CONTACT_CONTENT } from './contact.data';

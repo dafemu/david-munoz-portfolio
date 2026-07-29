@@ -12,7 +12,12 @@
       "Bash(sips -g pixelWidth -g pixelHeight src/assets/images/profile.png)",
       "Bash(node contrast.mjs)",
       "Bash(node palette2.mjs)",
-      "Bash(node verify-final.mjs)"
+      "Bash(node verify-final.mjs)",
+      "Bash(npx tsc *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/)",
+      "Bash(lsof -iTCP -sTCP:LISTEN -P -n)",
+      "Bash(kill %1)",
+      "Bash(pkill -f \"vite\")"
     ]
   }
 }

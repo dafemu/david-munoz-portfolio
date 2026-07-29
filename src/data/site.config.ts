@@ -8,7 +8,8 @@ export const SITE_CONFIG: SiteConfig = {
     { sectionId: 'about', label: '01 / about' },
     { sectionId: 'experience', label: '02 / experience' },
     { sectionId: 'projects', label: '03 / projects' },
-    { sectionId: 'stack', label: '04 / stack' },
+    { sectionId: 'personal-projects', label: '04 / personal' },
+    { sectionId: 'stack', label: '05 / stack' },
   ],
   contactNavLabel: 'contact',
   footer: {
@@ -26,6 +27,7 @@ export const TRACKED_SECTION_IDS = [
   'about',
   'experience',
   'projects',
+  'personal-projects',
   'stack',
   'contact',
 ] as const;

@@ -4,6 +4,8 @@ export { AboutSection } from './AboutSection';
 export { ExperienceSection } from './ExperienceSection';
 export { CaseStudyCard } from './CaseStudyCard';
 export { ProjectsSection } from './ProjectsSection';
+export { PersonalProjectCard } from './PersonalProjectCard';
+export { PersonalProjectsSection } from './PersonalProjectsSection';
 export { StackSection } from './StackSection';
 export { ContactSection } from './ContactSection';
 export { SiteFooter } from './SiteFooter';
