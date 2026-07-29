@@ -9,7 +9,7 @@ export const CONTACT_CONTENT: ContactContent = {
     {
       id: 'linkedin',
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/david-munoz-barco',
+      href: 'https://www.linkedin.com/in/david-munoz-barco-004714121/',
       external: true,
     },
     {
