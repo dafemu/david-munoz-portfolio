@@ -2,6 +2,7 @@ export { SiteHeader } from './SiteHeader';
 export { HeroSection } from './HeroSection';
 export { AboutSection } from './AboutSection';
 export { ExperienceSection } from './ExperienceSection';
+export { CaseStudyCard } from './CaseStudyCard';
 export { ProjectsSection } from './ProjectsSection';
 export { StackSection } from './StackSection';
 export { ContactSection } from './ContactSection';

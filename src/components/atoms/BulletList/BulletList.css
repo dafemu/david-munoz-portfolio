@@ -1,0 +1,24 @@
+.bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.bullet-list__item {
+  position: relative;
+  padding-left: var(--space-xl);
+  font-size: var(--fs-card);
+  line-height: var(--lh-snug);
+  color: var(--color-text-muted);
+}
+
+.bullet-list__item::before {
+  content: '';
+  position: absolute;
+  top: 0.6em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: var(--radius-circle);
+  background: var(--color-accent-alt);
+}

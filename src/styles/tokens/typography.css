@@ -22,10 +22,15 @@
   --fs-card: 14px;
   --fs-chip: 14px;
   --fs-note: 13px;
+  /**
+   * Mono floor raised one step. At 10–11px with wide tracking, JetBrains Mono
+   * reads far weaker than its contrast ratio suggests — WCAG models neither
+   * size nor tracking, which is why these labels felt unreadable at 10:1.
+   */
   --fs-mono-md: 13px;
   --fs-mono: 12px;
-  --fs-mono-sm: 11px;
-  --fs-mono-xs: 10px;
+  --fs-mono-sm: 12px;
+  --fs-mono-xs: 11px;
 
   /* Weights */
   --fw-regular: 400;
@@ -49,9 +54,9 @@
   --ls-mono-sm: 0.08em;
   --ls-mono: 0.1em;
   --ls-mono-md: 0.12em;
-  --ls-mono-lg: 0.14em;
-  --ls-mono-xl: 0.16em;
-  --ls-section: 0.18em;
+  --ls-mono-lg: 0.13em;
+  --ls-mono-xl: 0.14em;
+  --ls-section: 0.14em;
 
   /* Measures */
   --measure-lead: 52ch;

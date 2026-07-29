@@ -1,0 +1,59 @@
+/**
+ * Intentionally flat: no card surface, no border box. The visual weight sits
+ * below the case study cards so it reads as an appendix, not as more work.
+ */
+.additional-engagements {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.additional-engagements__heading {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-mono-lg);
+  color: var(--color-text-fainter);
+  text-transform: uppercase;
+}
+
+.additional-engagements__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-top: var(--space-2xs);
+}
+
+.additional-engagements__item {
+  padding-left: var(--space-lg);
+  border-left: 1px solid var(--color-border);
+}
+
+.additional-engagements__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-xs);
+  margin: 0 0 var(--space-3xs);
+  font-size: var(--fs-card);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-chip);
+}
+
+.additional-engagements__context {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-xs);
+  font-weight: var(--fw-regular);
+  letter-spacing: var(--ls-mono-sm);
+  color: var(--color-text-fainter);
+}
+
+.additional-engagements__description {
+  margin: 0;
+  font-size: var(--fs-note);
+  line-height: var(--lh-snug);
+  color: var(--color-text-faint);
+}

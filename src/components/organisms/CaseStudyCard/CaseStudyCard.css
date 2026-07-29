@@ -1,0 +1,70 @@
+.case-study-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding: var(--space-4xl);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  background: var(--color-surface);
+  transition:
+    border-color var(--duration-base) var(--ease-standard),
+    opacity var(--duration-reveal) var(--ease-reveal) var(--reveal-delay, 0s),
+    transform var(--duration-reveal) var(--ease-reveal) var(--reveal-delay, 0s);
+}
+
+.case-study-card:hover {
+  border-color: var(--color-accent-border-card);
+}
+
+.case-study-card__header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: var(--space-3xs) var(--space-md);
+}
+
+.case-study-card__order {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-sm);
+  letter-spacing: var(--ls-mono-md);
+  color: var(--color-accent-alt);
+}
+
+.case-study-card__title {
+  text-wrap: pretty;
+}
+
+.case-study-card__sector {
+  grid-column: 2;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-xs);
+  letter-spacing: var(--ls-mono-sm);
+  color: var(--color-text-fainter);
+}
+
+.case-study-card__blocks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* The result gets a quiet rule so it reads as the payoff of the card. */
+.case-study-card__outcome {
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border-hairline);
+}
+
+@media (max-width: 600px) {
+  .case-study-card {
+    padding: var(--space-2xl);
+  }
+
+  .case-study-card__header {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-card__sector {
+    grid-column: 1;
+  }
+}

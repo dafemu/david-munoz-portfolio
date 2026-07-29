@@ -10,5 +10,5 @@
   font-family: var(--font-mono);
   font-size: var(--fs-mono-sm);
   letter-spacing: var(--ls-mono);
-  color: var(--color-accent);
+  color: var(--color-accent-alt);
 }

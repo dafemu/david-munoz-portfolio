@@ -12,7 +12,7 @@
   font-family: var(--font-mono);
   font-size: var(--fs-mono);
   letter-spacing: var(--ls-section);
-  color: var(--color-accent);
+  color: var(--color-accent-alt);
 }
 
 .contact__body {

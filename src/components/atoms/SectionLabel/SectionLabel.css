@@ -4,7 +4,7 @@
   font-size: var(--fs-mono);
   font-weight: var(--fw-medium);
   letter-spacing: var(--ls-section);
-  color: var(--color-accent);
+  color: var(--color-accent-alt);
 }
 
 .section-label--sticky {

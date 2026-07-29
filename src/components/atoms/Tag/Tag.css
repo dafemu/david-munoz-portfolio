@@ -1,4 +1,7 @@
+/* inline-block for the same reason as .stack-chip: padded inline spans overlap on wrap. */
 .tag {
+  display: inline-block;
+  border: 1px solid var(--color-border-hairline);
   border-radius: var(--radius-pill);
   background: var(--color-accent-tag);
   color: var(--color-accent-text);

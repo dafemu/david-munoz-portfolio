@@ -1,56 +1,78 @@
 /**
- * Color tokens — the original palette is expressed entirely in oklch.
- * `--color-accent` is the single themeable hue; every accent-derived value
- * is computed from it with color-mix so swapping one token retints the site.
+ * Color tokens — "Ink & Ember".
+ *
+ * Six named colors carry the whole system; every token below derives from them.
+ * Two semantic accents, which is the point of the palette:
+ *   Signal (cyan)  — "you can act on this": links, CTAs, hover, focus, status.
+ *   Ember (amber)  — "this tells you what something is": section labels,
+ *                    technology chips, block labels, case study numbering.
+ *
+ * Every text/background pair is verified against WCAG AA (4.5:1). The lowest
+ * pair in the system is 5.26:1 (metadata on raised surface); most sit above 7:1.
  */
 :root {
-  /* Accent */
-  --color-accent: oklch(0.78 0.14 195);
-  --color-accent-hover: color-mix(in oklch, var(--color-accent) 70%, white);
-  --color-accent-strong: color-mix(in oklch, var(--color-accent) 78%, white);
-  --color-accent-text: color-mix(in oklch, var(--color-accent) 82%, white);
-  --color-accent-soft: color-mix(in oklch, var(--color-accent) 12%, transparent);
-  --color-accent-tag: color-mix(in oklch, var(--color-accent) 10%, transparent);
-  --color-accent-border: color-mix(in oklch, var(--color-accent) 45%, transparent);
-  --color-accent-border-hover: color-mix(in oklch, var(--color-accent) 60%, transparent);
-  --color-accent-border-card: color-mix(in oklch, var(--color-accent) 50%, transparent);
-  --color-accent-border-chip: color-mix(in oklch, var(--color-accent) 55%, transparent);
-  --color-accent-underline: color-mix(in oklch, var(--color-accent) 40%, transparent);
-  --color-accent-glow: color-mix(in oklch, var(--color-accent) 10%, transparent);
-  --color-accent-halo: color-mix(in oklch, var(--color-accent) 16%, transparent);
-  --color-accent-selection: color-mix(in oklch, var(--color-accent) 30%, transparent);
+  /* ---- Core palette ---- */
+  --color-ink: #0d111c;
+  --color-slate: #1a2133;
+  --color-slate-raised: #242d45;
+  --color-bone: #edf1fa;
+  --color-mist: #b6c0d6;
+  --color-mist-dim: #95a1ba;
+  --color-signal: #5ad8e6;
+  --color-ember: #f5b971;
 
-  /* Surfaces */
-  --color-bg: oklch(0.17 0.015 250);
-  --color-bg-translucent: oklch(0.17 0.015 250 / 0.72);
-  --color-bg-veil: oklch(0.17 0.015 250 / 0.6);
-  --color-surface: oklch(0.2 0.016 250);
-  --color-surface-raised: oklch(0.21 0.018 250);
-  --color-surface-frame: oklch(0.22 0.02 250);
-  --color-surface-stripe-a: oklch(0.24 0.02 250);
-  --color-surface-stripe-b: oklch(0.215 0.018 250);
+  /* ---- Accents ---- */
+  --color-accent: var(--color-signal);
+  --color-accent-alt: var(--color-ember);
 
-  /* Text */
-  --color-text: oklch(0.92 0.012 250);
-  --color-text-strong: oklch(0.94 0.012 250);
-  --color-text-soft: oklch(0.9 0.012 250);
-  --color-text-chip: oklch(0.85 0.014 250);
-  --color-text-link: oklch(0.88 0.014 250);
-  --color-text-body: oklch(0.72 0.018 250);
-  --color-text-muted: oklch(0.7 0.018 250);
-  --color-text-dim: oklch(0.66 0.02 250);
-  --color-text-faint: oklch(0.6 0.02 250);
-  --color-text-fainter: oklch(0.58 0.02 250);
-  --color-text-footer: oklch(0.52 0.02 250);
-  --color-text-on-accent: oklch(0.19 0.03 220);
+  --color-accent-hover: color-mix(in oklch, var(--color-accent) 78%, white);
+  --color-accent-strong: color-mix(in oklch, var(--color-accent) 85%, white);
+  /* Chip text: Ember on a neutral fill, so accent never sits on accent. */
+  --color-accent-text: var(--color-ember);
+  --color-accent-tag: var(--color-slate-raised);
+  --color-accent-soft: color-mix(in srgb, var(--color-accent) 16%, transparent);
+  --color-accent-border: color-mix(in srgb, var(--color-accent) 55%, transparent);
+  --color-accent-border-hover: color-mix(in srgb, var(--color-accent) 65%, transparent);
+  --color-accent-border-card: color-mix(in srgb, var(--color-accent) 55%, transparent);
+  --color-accent-border-chip: color-mix(in srgb, var(--color-accent) 60%, transparent);
+  --color-accent-underline: color-mix(in srgb, var(--color-accent) 50%, transparent);
+  --color-accent-glow: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  --color-accent-halo: color-mix(in srgb, var(--color-accent) 18%, transparent);
+  --color-accent-selection: color-mix(in srgb, var(--color-accent) 32%, transparent);
 
-  /* Borders & overlays */
-  --color-border-hairline: oklch(1 0 0 / 0.06);
-  --color-border-subtle: oklch(1 0 0 / 0.07);
-  --color-border: oklch(1 0 0 / 0.08);
-  --color-border-strong: oklch(1 0 0 / 0.09);
-  --color-border-frame: oklch(1 0 0 / 0.1);
-  --color-border-pill: oklch(1 0 0 / 0.12);
-  --color-border-cta: oklch(1 0 0 / 0.14);
-  --color-grid-dot: oklch(0.99 0 0 / 0.045);
+  /* ---- Surfaces ---- */
+  --color-bg: var(--color-ink);
+  --color-bg-translucent: color-mix(in srgb, var(--color-ink) 82%, transparent);
+  --color-bg-veil: color-mix(in srgb, var(--color-ink) 62%, transparent);
+  --color-surface: var(--color-slate);
+  --color-surface-raised: var(--color-slate-raised);
+  --color-surface-frame: var(--color-slate-raised);
+
+  /* ---- Text ---- */
+  --color-text: var(--color-bone);
+  --color-text-strong: color-mix(in oklch, var(--color-bone) 55%, white);
+  --color-text-soft: var(--color-bone);
+  --color-text-chip: var(--color-bone);
+  --color-text-link: var(--color-bone);
+  --color-text-body: var(--color-mist);
+  --color-text-muted: var(--color-mist);
+  --color-text-dim: var(--color-mist);
+  --color-text-faint: var(--color-mist-dim);
+  --color-text-fainter: var(--color-mist-dim);
+  --color-text-footer: var(--color-mist-dim);
+  --color-text-on-accent: var(--color-ink);
+
+  /**
+   * Borders & overlays — raised from the previous 6–9% white. At that level
+   * card edges measured 1.2:1 against the background and the whole page read
+   * as one flat field, which is what made legible text feel illegible.
+   */
+  --color-border-hairline: color-mix(in srgb, var(--color-bone) 10%, transparent);
+  --color-border-subtle: color-mix(in srgb, var(--color-bone) 12%, transparent);
+  --color-border: color-mix(in srgb, var(--color-bone) 18%, transparent);
+  --color-border-strong: color-mix(in srgb, var(--color-bone) 20%, transparent);
+  --color-border-frame: color-mix(in srgb, var(--color-bone) 22%, transparent);
+  --color-border-pill: color-mix(in srgb, var(--color-bone) 24%, transparent);
+  --color-border-cta: color-mix(in srgb, var(--color-bone) 26%, transparent);
+  --color-grid-dot: color-mix(in srgb, var(--color-bone) 6%, transparent);
 }

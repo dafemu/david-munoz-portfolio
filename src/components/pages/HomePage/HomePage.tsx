@@ -11,11 +11,13 @@ import {
 import { PortfolioTemplate } from '@/components/templates';
 import {
   ABOUT_CONTENT,
+  ADDITIONAL_ENGAGEMENTS,
+  CASE_STUDIES,
+  CASE_STUDIES_THROUGHLINE,
+  CASE_STUDY_BLOCK_LABELS,
   CONTACT_CONTENT,
   EXPERIENCE_ENTRIES,
   HERO_CONTENT,
-  PROJECTS,
-  PROJECTS_INTRO,
   RESUME_LINK,
   SITE_CONFIG,
   STACK_GROUPS,
@@ -72,8 +74,10 @@ export const HomePage = () => {
       <ProjectsSection
         sectionId="projects"
         label={SECTION_LABELS.projects}
-        intro={PROJECTS_INTRO}
-        projects={PROJECTS}
+        throughline={CASE_STUDIES_THROUGHLINE}
+        caseStudies={CASE_STUDIES}
+        blockLabels={CASE_STUDY_BLOCK_LABELS}
+        additionalEngagements={ADDITIONAL_ENGAGEMENTS}
       />
       <StackSection sectionId="stack" label={SECTION_LABELS.stack} groups={STACK_GROUPS} />
       <ContactSection

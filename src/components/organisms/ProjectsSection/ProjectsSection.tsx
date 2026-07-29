@@ -1,32 +1,53 @@
 import { SectionLabel, Text } from '@/components/atoms';
-import { ProjectCard } from '@/components/molecules';
-import type { Project, WithClassName } from '@/types';
+import { AdditionalEngagementList } from '@/components/molecules';
+import { CaseStudyCard } from '@/components/organisms/CaseStudyCard';
+import type {
+  AdditionalEngagementsContent,
+  CaseStudy,
+  CaseStudyBlockLabels,
+  Throughline,
+  WithClassName,
+} from '@/types';
 import { cx } from '@/utils';
 import './ProjectsSection.css';
 
 export interface ProjectsSectionProps extends WithClassName {
   readonly sectionId: string;
   readonly label: string;
-  readonly intro: string;
-  readonly projects: readonly Project[];
+  readonly throughline: Throughline;
+  readonly caseStudies: readonly CaseStudy[];
+  readonly blockLabels: CaseStudyBlockLabels;
+  readonly additionalEngagements: AdditionalEngagementsContent;
 }
 
 export const ProjectsSection = ({
   sectionId,
   label,
-  intro,
-  projects,
+  throughline,
+  caseStudies,
+  blockLabels,
+  additionalEngagements,
   className,
 }: ProjectsSectionProps) => (
   <section className={cx('projects', className)} id={sectionId}>
-    <div className="projects__aside">
-      <SectionLabel>{label}</SectionLabel>
-      <Text variant="note">{intro}</Text>
-    </div>
-    <div className="projects__grid">
-      {projects.map((project, index) => (
-        <ProjectCard key={project.id} project={project} revealIndex={index} />
-      ))}
+    <SectionLabel className="projects__label">{label}</SectionLabel>
+    <div className="projects__content">
+      <Text variant="body" className="projects__throughline">
+        {throughline.before}
+        <strong className="projects__throughline-highlight">{throughline.highlight}</strong>
+        {throughline.after}
+      </Text>
+      <div className="projects__list">
+        {caseStudies.map((caseStudy, index) => (
+          <CaseStudyCard
+            key={caseStudy.id}
+            caseStudy={caseStudy}
+            blockLabels={blockLabels}
+            revealIndex={index}
+          />
+        ))}
+      </div>
+      <AdditionalEngagementList content={additionalEngagements} />
     </div>
   </section>
 );

@@ -25,13 +25,15 @@ Then open the URL Vite prints (default <http://localhost:5173>).
 src/
 ├─ components/
 │  ├─ atoms/        Logo, NavLink, Button, SectionLabel, Tag, StatusDot,
-│  │                ScrollProgressBar, Heading, Text, StackChip,
+│  │                ScrollProgressBar, Heading, Text, BulletList, StackChip,
 │  │                LocationBadge, PageBackdrop
 │  ├─ molecules/    NavMenu, AvailabilityBadge, StatList, TagList, ProfileCard,
-│  │                HighlightCard, ExperienceItem, ProjectCard, StackGroupList,
-│  │                ContactChannels, HeroActions
+│  │                HighlightCard, ExperienceItem, CaseStudyBlock,
+│  │                AdditionalEngagementList, StackGroupList, ContactChannels,
+│  │                HeroActions
 │  ├─ organisms/    SiteHeader, HeroSection, AboutSection, ExperienceSection,
-│  │                ProjectsSection, StackSection, ContactSection, SiteFooter
+│  │                CaseStudyCard, ProjectsSection, StackSection,
+│  │                ContactSection, SiteFooter
 │  ├─ templates/    PortfolioTemplate
 │  └─ pages/        HomePage
 ├─ data/            All copy and content — the only place to edit text
@@ -57,7 +59,7 @@ No copy is hardcoded in JSX. Everything lives in `src/data/`:
 | `hero.data.ts`       | Headline, intro copy, CTAs, photo, stat labels       |
 | `about.data.ts`      | Statement, bio, the three capability cards           |
 | `experience.data.ts` | Career timeline and résumé link                      |
-| `projects.data.ts`   | Project cards                                        |
+| `caseStudies.data.ts`| Throughline, 5 case studies, "Also worth knowing"    |
 | `stack.data.ts`      | Technology groups                                    |
 | `contact.data.ts`    | Email, LinkedIn, phone                               |
 
@@ -67,11 +69,35 @@ The figure is **computed, never hardcoded**: `current year − 2018`, set in
 `src/utils/experience.ts` via `CAREER_START_YEAR`. It feeds both the hero paragraph and the
 "YEARS OF EXPERIENCE" stat. The "COMPANIES" stat is derived from `EXPERIENCE_ENTRIES.length`.
 
-### Theming
+## Color system — "Ink & Ember"
 
-The whole palette derives from one token. Change `--color-accent` in
-`src/styles/tokens/colors.css` to retint the site; the original alternatives were
-`#5fe0e6`, `#8ea2ff`, `#b6e26a` and `#ff9f6e`.
+Six named colors in `src/styles/tokens/colors.css` carry the whole system; every other
+color token derives from them.
+
+| Token             | Hex       | Role                                            |
+| ----------------- | --------- | ----------------------------------------------- |
+| `--color-ink`     | `#0D111C` | Base canvas                                     |
+| `--color-slate`   | `#1A2133` | Cards, header, surfaces                         |
+| `--color-bone`    | `#EDF1FA` | Primary text                                    |
+| `--color-mist`    | `#B6C0D6` | Secondary text — lead, bio, blurbs              |
+| `--color-signal`  | `#5AD8E6` | **Interactive**: links, CTAs, hover, focus      |
+| `--color-ember`   | `#F5B971` | **Taxonomy**: section labels, chips, block labels |
+
+Plus two derived steps: `--color-slate-raised` (`#242D45`) for chips and hover fills, and
+`--color-mist-dim` (`#95A1BA`) for metadata.
+
+The two accents are semantic, not decorative. **Signal marks what you can act on; Ember marks
+what something is.** Keep that split when adding components — it is what gives the page its
+hierarchy.
+
+### Accessibility
+
+All 47 text/background pairs in the UI pass WCAG AA; 46 of them reach AAA. The weakest pair is
+6.18:1 (case study sector metadata on a card). Re-run the audit after changing any color token.
+
+Small monospace type has a raised floor (`--fs-mono-xs: 11px`, `--fs-mono-sm: 12px`) and reduced
+tracking (`--ls-section: 0.14em`), because WCAG contrast ratios model neither size nor letter
+spacing — labels that measured 10:1 were still hard to read at 10px with `0.18em` tracking.
 
 ## Legacy
 

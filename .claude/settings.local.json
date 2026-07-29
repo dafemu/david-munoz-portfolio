@@ -9,7 +9,10 @@
       "Bash(npm install *)",
       "Bash(npm run *)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/)",
-      "Bash(sips -g pixelWidth -g pixelHeight src/assets/images/profile.png)"
+      "Bash(sips -g pixelWidth -g pixelHeight src/assets/images/profile.png)",
+      "Bash(node contrast.mjs)",
+      "Bash(node palette2.mjs)",
+      "Bash(node verify-final.mjs)"
     ]
   }
 }

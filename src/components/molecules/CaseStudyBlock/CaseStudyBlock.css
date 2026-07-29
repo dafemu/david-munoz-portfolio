@@ -1,0 +1,15 @@
+.case-study-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.case-study-block__label {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-sm);
+  letter-spacing: var(--ls-mono);
+  /* Metadata, not taxonomy: Ember is reserved for the case study number and
+     the technology tags, so it reads as "new case study" and "stack used". */
+  color: var(--color-text-fainter);
+}
