@@ -1,0 +1,14 @@
+.stack-chip {
+  padding: 9px 15px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  font-size: var(--fs-chip);
+  color: var(--color-text-chip);
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.stack-chip:hover {
+  border-color: var(--color-accent-border-chip);
+  color: var(--color-accent);
+}

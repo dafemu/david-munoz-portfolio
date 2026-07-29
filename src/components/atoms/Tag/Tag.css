@@ -1,0 +1,16 @@
+.tag {
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-tag);
+  color: var(--color-accent-text);
+  font-family: var(--font-mono);
+}
+
+.tag--md {
+  padding: 5px 11px;
+  font-size: var(--fs-mono-sm);
+}
+
+.tag--sm {
+  padding: var(--space-3xs) var(--space-sm);
+  font-size: var(--fs-mono-xs);
+}

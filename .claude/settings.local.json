@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p _legacy)",
+      "Bash(mv \"Portafolio David Munoz.dc.html\" support.js .thumbnail _legacy/)",
+      "Bash(mkdir -p src/assets/images public/cv)",
+      "Bash(cp uploads/IMG_1813.png src/assets/images/profile.png)",
+      "Bash(cp \"uploads/CV DAVID MUNOZ BARCO.pdf\" \"public/cv/CV-David-Munoz-Barco.pdf\")",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/)",
+      "Bash(sips -g pixelWidth -g pixelHeight src/assets/images/profile.png)"
+    ]
+  }
+}

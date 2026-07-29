@@ -1,0 +1,30 @@
+.experience {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-section-gap);
+  padding: var(--space-section-y) 0;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.experience__aside {
+  flex: 0 0 auto;
+}
+
+.experience__content {
+  flex: 1 1 min(100%, 460px);
+  display: flex;
+  flex-direction: column;
+}
+
+.experience__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience__resume {
+  margin-top: var(--space-4xl);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-md);
+  letter-spacing: var(--ls-mono-xs);
+}

@@ -1,0 +1,10 @@
+.availability-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: var(--ls-mono-xl);
+  color: var(--color-accent);
+}

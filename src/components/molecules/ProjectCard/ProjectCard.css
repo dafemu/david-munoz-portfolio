@@ -1,0 +1,75 @@
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  background: var(--color-surface);
+  color: var(--color-text);
+  transition:
+    border-color var(--duration-base) var(--ease-standard),
+    transform var(--duration-base) var(--ease-standard),
+    opacity var(--duration-reveal) var(--ease-reveal) var(--reveal-delay, 0s);
+}
+
+.project-card:hover {
+  border-color: var(--color-accent-border-card);
+  color: var(--color-text);
+  transform: translateY(-4px);
+}
+
+/* Reveal must not fight the hover lift: only the entrance uses translateY. */
+.project-card.reveal:not(.reveal--visible) {
+  transform: translateY(var(--reveal-offset));
+}
+
+.project-card__shot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
+  border-bottom: 1px solid var(--color-border-subtle);
+  background: repeating-linear-gradient(
+    135deg,
+    var(--color-surface-stripe-a) 0 8px,
+    var(--color-surface-stripe-b) 8px 16px
+  );
+}
+
+.project-card__shot-label {
+  padding: 0 var(--space-xl);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-xs);
+  letter-spacing: var(--ls-mono-md);
+  color: var(--color-text-faint);
+  text-align: center;
+}
+
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-2xl);
+}
+
+.project-card__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.project-card__year {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-sm);
+  color: var(--color-text-fainter);
+}
+
+.project-card__action {
+  padding-top: var(--space-3xs);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-sm);
+  letter-spacing: var(--ls-mono-sm);
+  color: var(--color-accent);
+}

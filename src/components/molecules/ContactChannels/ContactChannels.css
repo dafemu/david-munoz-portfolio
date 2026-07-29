@@ -1,0 +1,9 @@
+.contact-channels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+  padding-top: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-md);
+}

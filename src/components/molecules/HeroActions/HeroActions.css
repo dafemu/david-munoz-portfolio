@@ -1,0 +1,6 @@
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  padding-top: var(--space-2xs);
+}

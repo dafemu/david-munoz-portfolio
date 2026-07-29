@@ -1,0 +1,14 @@
+.logo {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-md);
+  letter-spacing: var(--ls-mono-lg);
+  color: var(--color-text);
+}
+
+.logo:hover {
+  color: var(--color-text);
+}
+
+.logo__suffix {
+  color: var(--color-accent);
+}

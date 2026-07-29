@@ -1,0 +1,56 @@
+/**
+ * Color tokens — the original palette is expressed entirely in oklch.
+ * `--color-accent` is the single themeable hue; every accent-derived value
+ * is computed from it with color-mix so swapping one token retints the site.
+ */
+:root {
+  /* Accent */
+  --color-accent: oklch(0.78 0.14 195);
+  --color-accent-hover: color-mix(in oklch, var(--color-accent) 70%, white);
+  --color-accent-strong: color-mix(in oklch, var(--color-accent) 78%, white);
+  --color-accent-text: color-mix(in oklch, var(--color-accent) 82%, white);
+  --color-accent-soft: color-mix(in oklch, var(--color-accent) 12%, transparent);
+  --color-accent-tag: color-mix(in oklch, var(--color-accent) 10%, transparent);
+  --color-accent-border: color-mix(in oklch, var(--color-accent) 45%, transparent);
+  --color-accent-border-hover: color-mix(in oklch, var(--color-accent) 60%, transparent);
+  --color-accent-border-card: color-mix(in oklch, var(--color-accent) 50%, transparent);
+  --color-accent-border-chip: color-mix(in oklch, var(--color-accent) 55%, transparent);
+  --color-accent-underline: color-mix(in oklch, var(--color-accent) 40%, transparent);
+  --color-accent-glow: color-mix(in oklch, var(--color-accent) 10%, transparent);
+  --color-accent-halo: color-mix(in oklch, var(--color-accent) 16%, transparent);
+  --color-accent-selection: color-mix(in oklch, var(--color-accent) 30%, transparent);
+
+  /* Surfaces */
+  --color-bg: oklch(0.17 0.015 250);
+  --color-bg-translucent: oklch(0.17 0.015 250 / 0.72);
+  --color-bg-veil: oklch(0.17 0.015 250 / 0.6);
+  --color-surface: oklch(0.2 0.016 250);
+  --color-surface-raised: oklch(0.21 0.018 250);
+  --color-surface-frame: oklch(0.22 0.02 250);
+  --color-surface-stripe-a: oklch(0.24 0.02 250);
+  --color-surface-stripe-b: oklch(0.215 0.018 250);
+
+  /* Text */
+  --color-text: oklch(0.92 0.012 250);
+  --color-text-strong: oklch(0.94 0.012 250);
+  --color-text-soft: oklch(0.9 0.012 250);
+  --color-text-chip: oklch(0.85 0.014 250);
+  --color-text-link: oklch(0.88 0.014 250);
+  --color-text-body: oklch(0.72 0.018 250);
+  --color-text-muted: oklch(0.7 0.018 250);
+  --color-text-dim: oklch(0.66 0.02 250);
+  --color-text-faint: oklch(0.6 0.02 250);
+  --color-text-fainter: oklch(0.58 0.02 250);
+  --color-text-footer: oklch(0.52 0.02 250);
+  --color-text-on-accent: oklch(0.19 0.03 220);
+
+  /* Borders & overlays */
+  --color-border-hairline: oklch(1 0 0 / 0.06);
+  --color-border-subtle: oklch(1 0 0 / 0.07);
+  --color-border: oklch(1 0 0 / 0.08);
+  --color-border-strong: oklch(1 0 0 / 0.09);
+  --color-border-frame: oklch(1 0 0 / 0.1);
+  --color-border-pill: oklch(1 0 0 / 0.12);
+  --color-border-cta: oklch(1 0 0 / 0.14);
+  --color-grid-dot: oklch(0.99 0 0 / 0.045);
+}

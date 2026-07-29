@@ -1,0 +1,43 @@
+.text {
+  margin: 0;
+}
+
+.text--lead {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-tight);
+  color: var(--color-text-body);
+  max-width: var(--measure-lead);
+}
+
+.text--body {
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-muted);
+  max-width: var(--measure-body);
+}
+
+.text--blurb {
+  font-size: var(--fs-blurb);
+  line-height: var(--lh-base);
+  color: var(--color-text-muted);
+  max-width: var(--measure-blurb);
+}
+
+.text--card {
+  font-size: var(--fs-card);
+  line-height: var(--lh-snug);
+  color: var(--color-text-muted);
+}
+
+.text--note {
+  font-size: var(--fs-note);
+  line-height: var(--lh-base);
+  color: var(--color-text-faint);
+}
+
+.text--contact {
+  font-size: var(--fs-contact-lead);
+  line-height: var(--lh-base);
+  color: var(--color-text-muted);
+  max-width: var(--measure-contact);
+}

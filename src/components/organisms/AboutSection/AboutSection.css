@@ -1,0 +1,26 @@
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-section-gap);
+  padding: var(--space-section-y) 0;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.about__label {
+  flex: 0 0 var(--size-section-label);
+}
+
+.about__content {
+  flex: 1 1 min(100%, 460px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
+}
+
+.about__highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: var(--space-lg);
+  padding-top: var(--space-xs);
+}

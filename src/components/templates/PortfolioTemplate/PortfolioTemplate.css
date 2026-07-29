@@ -1,0 +1,21 @@
+.portfolio-template {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+.portfolio-template__container {
+  position: relative;
+  z-index: 1;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 var(--layout-gutter);
+}
+
+.portfolio-template__main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}

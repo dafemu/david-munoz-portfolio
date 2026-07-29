@@ -1,0 +1,14 @@
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag-list--md {
+  gap: var(--space-xs);
+  padding-top: var(--space-3xs);
+}
+
+.tag-list--sm {
+  gap: 7px;
+  padding-top: 2px;
+}

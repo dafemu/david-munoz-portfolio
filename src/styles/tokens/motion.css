@@ -1,0 +1,18 @@
+/** Motion tokens — durations and easings lifted from the original transitions. */
+:root {
+  --duration-instant: 0.15s;
+  --duration-fast: 0.25s;
+  --duration-base: 0.3s;
+  --duration-slow: 0.5s;
+  --duration-reveal: 0.75s;
+  --duration-intro: 0.7s;
+  --duration-floaty: 7s;
+
+  --ease-linear: linear;
+  --ease-standard: ease;
+  --ease-reveal: cubic-bezier(0.22, 0.8, 0.3, 1);
+
+  /* Reveal stagger: the original cycled delays every 4 elements. */
+  --reveal-stagger-step: 0.07s;
+  --reveal-offset: 26px;
+}

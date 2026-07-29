@@ -1,0 +1,35 @@
+.heading {
+  margin: 0;
+  font-weight: var(--fw-semibold);
+}
+
+.heading--display {
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+}
+
+.heading--display-sm {
+  font-size: var(--fs-display-sm);
+  line-height: var(--lh-display-sm);
+  letter-spacing: var(--ls-display);
+  max-width: var(--measure-headline);
+}
+
+.heading--statement {
+  font-size: var(--fs-statement);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-statement);
+  letter-spacing: -0.015em;
+  text-wrap: pretty;
+}
+
+.heading--role {
+  font-size: var(--fs-role);
+  letter-spacing: var(--ls-snug);
+}
+
+.heading--card {
+  font-size: var(--fs-project-title);
+  letter-spacing: var(--ls-snug);
+}

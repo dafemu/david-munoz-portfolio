@@ -1,0 +1,12 @@
+/** Corner radius tokens. */
+:root {
+  --radius-sm: 10px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+  --radius-2xl: 18px;
+  --radius-3xl: 22px;
+  --radius-4xl: 28px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+}

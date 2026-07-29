@@ -1,0 +1,62 @@
+/** Typography tokens — fluid sizes keep the original clamp() scaling. */
+:root {
+  --font-sans: 'Space Grotesk', Helvetica, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Fluid display sizes */
+  --fs-display: clamp(40px, 6.4vw, 82px);
+  --fs-display-sm: clamp(34px, 5.6vw, 68px);
+  --fs-lead: clamp(17px, 1.6vw, 21px);
+  --fs-statement: clamp(19px, 2.1vw, 27px);
+  --fs-email: clamp(20px, 3vw, 34px);
+
+  /* Fixed sizes */
+  --fs-stat: 30px;
+  --fs-role: 19px;
+  --fs-contact-lead: 17px;
+  --fs-project-title: 17px;
+  --fs-company: 16px;
+  --fs-body: 16px;
+  --fs-cta: 15px;
+  --fs-blurb: 15px;
+  --fs-card: 14px;
+  --fs-chip: 14px;
+  --fs-note: 13px;
+  --fs-mono-md: 13px;
+  --fs-mono: 12px;
+  --fs-mono-sm: 11px;
+  --fs-mono-xs: 10px;
+
+  /* Weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* Line heights */
+  --lh-display: 0.98;
+  --lh-display-sm: 1.02;
+  --lh-statement: 1.45;
+  --lh-tight: 1.6;
+  --lh-snug: 1.65;
+  --lh-base: 1.7;
+  --lh-relaxed: 1.75;
+
+  /* Letter spacing */
+  --ls-display: -0.035em;
+  --ls-tight: -0.02em;
+  --ls-snug: -0.015em;
+  --ls-mono-xs: 0.06em;
+  --ls-mono-sm: 0.08em;
+  --ls-mono: 0.1em;
+  --ls-mono-md: 0.12em;
+  --ls-mono-lg: 0.14em;
+  --ls-mono-xl: 0.16em;
+  --ls-section: 0.18em;
+
+  /* Measures */
+  --measure-lead: 52ch;
+  --measure-body: 62ch;
+  --measure-blurb: 60ch;
+  --measure-contact: 46ch;
+  --measure-headline: 16ch;
+}

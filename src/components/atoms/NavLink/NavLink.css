@@ -1,0 +1,12 @@
+.nav-link {
+  color: var(--color-text-dim);
+  transition: color var(--duration-base) var(--ease-standard);
+}
+
+.nav-link:hover {
+  color: var(--color-accent-hover);
+}
+
+.nav-link--active {
+  color: var(--color-accent);
+}

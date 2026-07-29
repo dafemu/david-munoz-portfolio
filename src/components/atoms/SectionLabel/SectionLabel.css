@@ -1,0 +1,13 @@
+.section-label {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-section);
+  color: var(--color-accent);
+}
+
+.section-label--sticky {
+  position: sticky;
+  top: var(--layout-sticky-offset);
+}

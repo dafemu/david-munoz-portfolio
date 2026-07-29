@@ -1,0 +1,20 @@
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-hero-gap);
+  padding: var(--space-hero-top) 0 var(--space-hero-bottom);
+}
+
+.hero__intro {
+  flex: 1 1 min(100%, 440px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4xl);
+  animation: fadeUp var(--duration-intro) var(--ease-standard) both;
+}
+
+.hero__highlight {
+  color: var(--color-text-strong);
+  font-weight: var(--fw-semibold);
+}

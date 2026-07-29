@@ -1,0 +1,19 @@
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-section-gap);
+  padding: var(--space-section-y) 0;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.stack__label {
+  flex: 0 0 var(--size-section-label);
+}
+
+.stack__groups {
+  flex: 1 1 min(100%, 460px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5xl);
+}

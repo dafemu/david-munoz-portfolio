@@ -1,0 +1,22 @@
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-section-gap);
+  padding: var(--space-section-y) 0;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.projects__aside {
+  flex: 0 0 var(--size-section-label);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.projects__grid {
+  flex: 1 1 min(100%, 460px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: var(--space-xl);
+}
