@@ -3,8 +3,11 @@
   font-weight: var(--fw-semibold);
 }
 
+/* The only 700 on the page — at display size the extra weight is what makes
+   the name read as the loudest thing rather than just the biggest. */
 .heading--display {
   font-size: var(--fs-display);
+  font-weight: var(--fw-bold);
   line-height: var(--lh-display);
   letter-spacing: var(--ls-display);
 }

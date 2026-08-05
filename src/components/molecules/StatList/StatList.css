@@ -1,10 +1,23 @@
+/**
+ * Three equal columns rather than a wrapping flex row. As flex, the long
+ * middle label ("COMPANIES · BANKING, RETAIL, TRAVEL") pushed the third stat
+ * onto a line of its own, which read as an accident. Columns let the labels
+ * wrap inside their own track instead.
+ */
 .stat-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-stats-gap);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2xl) var(--space-stats-gap);
   margin: var(--space-xs) 0 0;
   padding-top: var(--space-4xl);
   border-top: 1px solid var(--color-border-subtle);
+}
+
+/* Below this the three tracks are too narrow to read; one column each. */
+@media (max-width: 460px) {
+  .stat-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .stat-list__item {
@@ -17,6 +30,8 @@
   font-size: var(--fs-stat);
   font-weight: var(--fw-semibold);
   letter-spacing: var(--ls-tight);
+  /* Three figures sitting in a row: equal-width digits keep them aligned. */
+  font-variant-numeric: tabular-nums;
 }
 
 .stat-list__label {

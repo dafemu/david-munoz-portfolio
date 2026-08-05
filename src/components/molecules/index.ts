@@ -1,4 +1,5 @@
 export { NavMenu } from './NavMenu';
+export { NavDrawer } from './NavDrawer';
 export { AvailabilityBadge } from './AvailabilityBadge';
 export { StatList } from './StatList';
 export { TagList } from './TagList';

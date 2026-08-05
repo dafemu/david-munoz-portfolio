@@ -1,0 +1,120 @@
+.nav-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  /* visibility (not display) so both directions can animate; it also drops the
+     panel out of the tab order, backing up the `inert` attribute. */
+  visibility: hidden;
+  transition: visibility 0s linear var(--duration-base);
+}
+
+.nav-drawer--open {
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.nav-drawer__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-bg-veil);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-reveal);
+}
+
+.nav-drawer--open .nav-drawer__overlay {
+  opacity: 1;
+}
+
+.nav-drawer__panel {
+  position: absolute;
+  inset: 0 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-2xl);
+  width: min(78vw, 320px);
+  /* Safe-area padding so the panel clears notches and home indicators. */
+  padding:
+    calc(var(--space-5xl) + env(safe-area-inset-top)) var(--space-5xl)
+    calc(var(--space-5xl) + env(safe-area-inset-bottom))
+    var(--space-5xl);
+  padding-right: calc(var(--space-5xl) + env(safe-area-inset-right));
+  border-left: 1px solid var(--color-border-subtle);
+  background: var(--color-surface);
+  overscroll-behavior: contain;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform var(--duration-base) var(--ease-reveal);
+}
+
+.nav-drawer--open .nav-drawer__panel {
+  transform: translateX(0);
+}
+
+.nav-drawer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-md);
+  letter-spacing: var(--ls-mono-sm);
+}
+
+/**
+ * Links settle in one after another, keyed off their index. The delay only
+ * applies while opening — on close everything leaves together, because a
+ * staggered exit makes the panel feel slow to dismiss.
+ */
+.nav-drawer__link,
+.nav-drawer__cta {
+  opacity: 0;
+  transform: translateX(12px);
+  transition:
+    opacity var(--duration-fast) var(--ease-reveal),
+    transform var(--duration-fast) var(--ease-reveal),
+    color var(--duration-base) var(--ease-standard);
+}
+
+.nav-drawer--open .nav-drawer__link,
+.nav-drawer--open .nav-drawer__cta {
+  opacity: 1;
+  transform: none;
+  transition-delay: calc(var(--drawer-index, 0) * var(--reveal-stagger-step));
+}
+
+.nav-drawer__link {
+  /* Comfortable target: the desktop nav links measured 16px tall. */
+  padding: var(--space-sm) 0;
+  color: var(--color-text-dim);
+}
+
+.nav-drawer__link:hover {
+  color: var(--color-accent-hover);
+}
+
+.nav-drawer__link--active {
+  color: var(--color-accent);
+}
+
+.nav-drawer__cta {
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--color-border-hairline);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-drawer__panel {
+    transform: none;
+    opacity: 0;
+    transition: opacity var(--duration-fast) var(--ease-standard);
+  }
+
+  .nav-drawer--open .nav-drawer__panel {
+    opacity: 1;
+  }
+
+  .nav-drawer__link,
+  .nav-drawer__cta {
+    transform: none;
+  }
+}

@@ -15,10 +15,16 @@ export const ExperienceItem = ({ entry, revealIndex = 0, className }: Experience
 
   return (
     <li
-      className={cx('experience-item', reveal.className, className)}
+      className={cx(
+        'experience-item',
+        entry.isCurrent === true && 'experience-item--current',
+        reveal.className,
+        className,
+      )}
       ref={reveal.ref}
       style={reveal.style}
     >
+      <span className="experience-item__node" aria-hidden="true" />
       <p className="experience-item__period">{entry.period}</p>
       <div className="experience-item__body">
         <div className="experience-item__title">

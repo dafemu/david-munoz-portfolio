@@ -1,7 +1,16 @@
+/**
+ * No `overflow-x` here on purpose — it moved to `body` (see base/global.css).
+ *
+ * This element used to carry `overflow-x: hidden`, and `hidden` on one axis
+ * forces the other to compute to `auto`: that made the page's own wrapper a
+ * scroll container sitting between every section and the viewport, which is
+ * exactly what anchor navigation and `scrollIntoView()` resolve against.
+ * Horizontal overflow is contained at the root instead, where it propagates
+ * to the viewport rather than introducing a container of its own.
+ */
 .portfolio-template {
   position: relative;
   min-height: 100vh;
-  overflow-x: hidden;
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-sans);
@@ -18,4 +27,9 @@
 .portfolio-template__main {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
+}
+
+/* Focused only via the skip link, so it needs no ring of its own. */
+.portfolio-template__main:focus {
+  outline: none;
 }

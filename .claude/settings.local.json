@@ -17,7 +17,29 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/)",
       "Bash(lsof -iTCP -sTCP:LISTEN -P -n)",
       "Bash(kill %1)",
-      "Bash(pkill -f \"vite\")"
+      "Bash(pkill -f \"vite\")",
+      "Read(//Users/davidmunozbarco/.claude/skills/**)",
+      "Read(//Users/davidmunozbarco/.claude/plugins/**)",
+      "Read(//Users/davidmunozbarco/.claude/**)",
+      "mcp__plugin_accesslint_accesslint__audit_live",
+      "Bash(curl -s -o /dev/null -w \"root-abs /cv/ => %{http_code}\\\\n\" \"http://localhost:5199/cv/CV-David-Munoz-Barco.pdf\")",
+      "Bash(curl -s -o /dev/null -w \"based    => %{http_code}\\\\n\" \"http://localhost:5199/david-munoz-portfolio/cv/CV-David-Munoz-Barco.pdf\")",
+      "Bash(sips -s format webp -s formatOptions 80 --resampleWidth 680 profile.png --out profile.webp)",
+      "Bash(sips -g pixelWidth -g pixelHeight profile.webp)",
+      "Bash(sips -s format webp p680.png --out test.webp)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(rm -f \"src/assets/images/profile@1x.webp\")",
+      "Bash(npm uninstall *)",
+      "Bash(mkdir -p src/assets/fonts)",
+      "Bash(curl -s -H 'User-Agent: __TRACKED_VAR__' 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&family=JetBrains+Mono:wght@400..500&display=swap' -o /private/tmp/claude-501/-Users-davidmunozbarco-Desktop-Portafoliio-Projects-Portafolio-Frontend-Developer/f7433a26-388c-4d97-a4f7-6c3eab7dcdc2/scratchpad/fonts.css)",
+      "Bash(curl -sS \"https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mPbF4C_k3HqU.woff2\" -o space-grotesk-latin.woff2)",
+      "Bash(curl -sS \"https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mPb94C_k3HqUtEw.woff2\" -o space-grotesk-latin-ext.woff2)",
+      "Bash(curl -sS \"https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwgknk-4.woff2\" -o jetbrains-mono-latin.woff2)",
+      "Bash(curl -sS \"https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPx7cwgknk-6nFg.woff2\" -o jetbrains-mono-latin-ext.woff2)",
+      "Bash(file *.woff2)",
+      "Bash(python3 -)",
+      "Bash(curl -s -o /dev/null -w \"CV en dev: %{http_code}\\\\n\" \"http://localhost:5199/david-munoz-portfolio/cv/CV-David-Munoz-Barco.pdf\")",
+      "Bash(pkill -f \"vite --port 5199\")"
     ]
   }
 }

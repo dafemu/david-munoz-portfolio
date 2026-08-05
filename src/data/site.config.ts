@@ -2,7 +2,6 @@ import type { SiteConfig } from '@/types';
 
 export const SITE_CONFIG: SiteConfig = {
   brandName: 'DFMB',
-  brandSuffix: '.',
   heroSectionId: 'top',
   navigation: [
     { sectionId: 'about', label: '01 / about' },
@@ -12,8 +11,11 @@ export const SITE_CONFIG: SiteConfig = {
     { sectionId: 'stack', label: '05 / stack' },
   ],
   contactNavLabel: 'contact',
+  skipLinkLabel: 'Skip to content',
   footer: {
-    copyright: '© 2026 DAVID F. MUÑOZ BARCO',
+    /* Derived for the same reason the years of experience are: a stale year in
+       the footer is the cheapest possible tell that a site is unmaintained. */
+    copyright: `© ${new Date().getFullYear()} DAVID F. MUÑOZ BARCO`,
     credit: 'DESIGNED & BUILT IN CALI, CO',
   },
   features: {

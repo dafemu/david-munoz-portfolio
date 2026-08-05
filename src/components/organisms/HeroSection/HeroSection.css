@@ -14,6 +14,11 @@
   animation: fadeUp var(--duration-intro) var(--ease-standard) both;
 }
 
+/* Pulled tight under the name so the two read as one block. */
+.hero__role {
+  margin-top: calc(-1 * var(--space-md));
+}
+
 .hero__highlight {
   color: var(--color-text-strong);
   font-weight: var(--fw-semibold);

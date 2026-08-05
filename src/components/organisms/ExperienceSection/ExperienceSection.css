@@ -17,13 +17,43 @@
   flex-direction: column;
 }
 
+/**
+ * The one section that breaks the page's label-left / content-right rhythm.
+ * Six roles in date order are the only content here with an inherent shape,
+ * so they get a real rail instead of another stack of bordered rows — it is
+ * the page's deliberate change of pace, not decoration.
+ */
 .experience__list {
+  --timeline-rail-x: 5px;
+
+  position: relative;
   display: flex;
   flex-direction: column;
 }
 
+/* Faded at both ends so the rail reads as a continuing thread rather than a
+   line with hard stops. */
+.experience__list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--timeline-rail-x);
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--color-border) 6%,
+    var(--color-border) 94%,
+    transparent
+  );
+}
+
 .experience__resume {
+  align-self: flex-start;
   margin-top: var(--space-4xl);
+  margin-left: var(--space-4xl);
+  padding: var(--space-xs) 0;
   font-family: var(--font-mono);
   font-size: var(--fs-mono-md);
   letter-spacing: var(--ls-mono-xs);

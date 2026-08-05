@@ -1,10 +1,14 @@
+/**
+ * A row on the timeline rail drawn by .experience__list. The left padding is
+ * what clears the rail; the node sits back on top of it.
+ */
 .experience-item {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2xl);
-  margin: 0 -20px;
-  padding: var(--space-4xl) var(--space-2xl);
-  border-bottom: 1px solid var(--color-border-hairline);
+  margin-right: -20px;
+  padding: var(--space-4xl) var(--space-2xl) var(--space-4xl) var(--space-4xl);
   border-radius: var(--radius-xl);
   transition:
     background var(--duration-base) var(--ease-standard),
@@ -16,6 +20,29 @@
   background: var(--color-surface-raised);
 }
 
+/* ---- Timeline node ---- */
+
+.experience-item__node {
+  position: absolute;
+  top: calc(var(--space-4xl) + 7px);
+  /* Centres the 9px node on the 1px rail sitting at --timeline-rail-x. */
+  left: calc(var(--timeline-rail-x) - 4px);
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-circle);
+  background: var(--color-bg);
+}
+
+/* The live role is the only lit node — everything else is history. */
+.experience-item--current .experience-item__node {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  box-shadow: 0 0 0 4px var(--color-accent-halo);
+}
+
+/* ---- Body ---- */
+
 .experience-item__period {
   flex: 0 0 var(--size-period-column);
   margin: 0;
@@ -24,7 +51,12 @@
   font-size: var(--fs-mono-sm);
   line-height: var(--lh-tight);
   letter-spacing: var(--ls-mono-xs);
+  font-variant-numeric: tabular-nums;
   color: var(--color-text-fainter);
+}
+
+.experience-item--current .experience-item__period {
+  color: var(--color-accent);
 }
 
 .experience-item__body {

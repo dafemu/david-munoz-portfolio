@@ -26,7 +26,9 @@
   --space-hero-gap: clamp(32px, 6vw, 80px);
   --space-section-gap: clamp(24px, 5vw, 72px);
   --space-nav-gap: clamp(14px, 2.6vw, 34px);
-  --space-stats-gap: clamp(22px, 4vw, 54px);
+  /* Tightened so the three hero stats hold one row instead of orphaning the
+     third onto a line of its own. */
+  --space-stats-gap: clamp(20px, 3vw, 40px);
 
   /* Fixed rails */
   --size-section-label: 190px;

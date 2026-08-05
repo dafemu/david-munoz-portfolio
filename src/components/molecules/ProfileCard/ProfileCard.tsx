@@ -12,7 +12,15 @@ export const ProfileCard = ({ photo, locationLabel, className }: ProfileCardProp
   <figure className={cx('profile-card', className)}>
     <span className="profile-card__glow" aria-hidden="true" />
     <span className="profile-card__frame">
-      <img className="profile-card__image" src={photo.src} alt={photo.alt} loading="eager" />
+      <img
+        className="profile-card__image"
+        src={photo.src}
+        alt={photo.alt}
+        width={photo.width}
+        height={photo.height}
+        loading="eager"
+        fetchPriority="high"
+      />
       <span className="profile-card__wash" aria-hidden="true" />
     </span>
     <figcaption>

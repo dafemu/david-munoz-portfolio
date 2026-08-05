@@ -5,11 +5,15 @@ import type { PersonalProject, PersonalProjectLinkLabels, WithClassName } from '
 import { cx } from '@/utils';
 import './PersonalProjectCard.css';
 
-/** Short mono badge naming the capture still owed, shown on the media slot. */
-const MEDIA_TYPE_LABELS = {
-  gif: 'GIF',
-  screenshot: 'SCREENSHOT',
-  video: 'VIDEO',
+/**
+ * Placeholder wording for the media slot. The capture notes themselves live in
+ * `mediaTodo` and stay out of the DOM — they are working notes, not content a
+ * visitor should read.
+ */
+const MEDIA_PLACEHOLDER_LABELS = {
+  gif: 'Walkthrough',
+  screenshot: 'Preview',
+  video: 'Walkthrough',
 } as const;
 
 export interface PersonalProjectCardProps extends WithClassName {
@@ -38,22 +42,19 @@ export const PersonalProjectCard = ({
       ref={reveal.ref}
       style={reveal.style}
     >
-      {/* TODO: replace this slot with the real media — see mediaTodo in personalProjects.data.ts */}
+      {/* Reserves the exact space the real capture will take — see mediaTodo
+          in personalProjects.data.ts for what each project still needs. */}
       <div
         className={cx(
           'personal-project-card__media',
           `personal-project-card__media--${project.mediaAspect}`,
         )}
+        role="img"
+        aria-label={`${MEDIA_PLACEHOLDER_LABELS[project.mediaType]} of ${project.title} — coming soon`}
       >
-        <span className="personal-project-card__media-badge">
-          {MEDIA_TYPE_LABELS[project.mediaType]} PENDING
+        <span className="personal-project-card__media-mark" aria-hidden="true">
+          {project.title}
         </span>
-        <p className="personal-project-card__media-todo">TODO: {project.mediaTodo}</p>
-        {project.secondaryMediaTodo !== undefined && (
-          <p className="personal-project-card__media-todo personal-project-card__media-todo--secondary">
-            TODO: {project.secondaryMediaTodo}
-          </p>
-        )}
       </div>
 
       <header className="personal-project-card__header">

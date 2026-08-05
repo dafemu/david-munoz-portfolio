@@ -1,13 +1,22 @@
-import { Logo, ScrollProgressBar } from '@/components/atoms';
-import { NavMenu } from '@/components/molecules';
-import { useActiveSection, useScrollProgress } from '@/hooks';
+import { useCallback, useEffect, useState } from 'react';
+import { Logo, MenuToggle, ScrollProgressBar } from '@/components/atoms';
+import { NavDrawer, NavMenu } from '@/components/molecules';
+import { useActiveSection, useMediaQuery } from '@/hooks';
 import type { NavigationItem, WithClassName } from '@/types';
-import { cx } from '@/utils';
+import { COMPACT_NAV_QUERY, cx } from '@/utils';
 import './SiteHeader.css';
+
+/** Ties the toggle's aria-controls to the drawer it opens. */
+const NAV_DRAWER_ID = 'site-nav-drawer';
+
+const MENU_LABELS = {
+  open: 'Open menu',
+  close: 'Close menu',
+  drawerTitle: 'Site navigation',
+} as const;
 
 export interface SiteHeaderProps extends WithClassName {
   readonly brandName: string;
-  readonly brandSuffix: string;
   readonly heroSectionId: string;
   readonly navigation: readonly NavigationItem[];
   readonly contactLabel: string;
@@ -18,7 +27,6 @@ export interface SiteHeaderProps extends WithClassName {
 
 export const SiteHeader = ({
   brandName,
-  brandSuffix,
   heroSectionId,
   navigation,
   contactLabel,
@@ -26,19 +34,52 @@ export const SiteHeader = ({
   trackedSectionIds,
   className,
 }: SiteHeaderProps) => {
-  const scrollProgress = useScrollProgress();
   const activeSectionId = useActiveSection(trackedSectionIds);
+  const isCompact = useMediaQuery(COMPACT_NAV_QUERY);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const closeMenu = useCallback(() => setIsMenuOpen(false), []);
+  const toggleMenu = useCallback(() => setIsMenuOpen((isOpen) => !isOpen), []);
+
+  /* Growing past the breakpoint while the drawer is open would leave it
+     stranded over a layout that already shows the full nav. */
+  useEffect(() => {
+    if (!isCompact) setIsMenuOpen(false);
+  }, [isCompact]);
 
   return (
     <header className={cx('site-header', className)}>
-      <ScrollProgressBar progress={scrollProgress} />
-      <Logo name={brandName} suffix={brandSuffix} href={`#${heroSectionId}`} />
-      <NavMenu
-        items={navigation}
-        activeSectionId={activeSectionId}
-        contactLabel={contactLabel}
-        contactSectionId={contactSectionId}
-      />
+      <ScrollProgressBar />
+      <Logo name={brandName} href={`#${heroSectionId}`} />
+
+      {isCompact ? (
+        <>
+          <MenuToggle
+            isOpen={isMenuOpen}
+            controls={NAV_DRAWER_ID}
+            onToggle={toggleMenu}
+            openLabel={MENU_LABELS.open}
+            closeLabel={MENU_LABELS.close}
+          />
+          <NavDrawer
+            id={NAV_DRAWER_ID}
+            isOpen={isMenuOpen}
+            items={navigation}
+            activeSectionId={activeSectionId}
+            contactLabel={contactLabel}
+            contactSectionId={contactSectionId}
+            title={MENU_LABELS.drawerTitle}
+            onClose={closeMenu}
+          />
+        </>
+      ) : (
+        <NavMenu
+          items={navigation}
+          activeSectionId={activeSectionId}
+          contactLabel={contactLabel}
+          contactSectionId={contactSectionId}
+        />
+      )}
     </header>
   );
 };

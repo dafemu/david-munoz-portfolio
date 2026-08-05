@@ -1,7 +1,9 @@
 import type { ContactContent } from '@/types';
 
 export const CONTACT_CONTENT: ContactContent = {
-  headline: 'Let’s build something together',
+  /* Echoes the case-study throughline instead of the usual "let's build
+     something together" — it says what the work actually is. */
+  headline: 'If your product needs to grow up, I’ve done this before',
   description:
     'Open to senior frontend roles, collaborations and projects where interface quality matters.',
   email: 'david.f.do@hotmail.com',

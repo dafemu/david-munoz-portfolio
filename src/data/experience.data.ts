@@ -9,6 +9,7 @@ export const EXPERIENCE_ENTRIES: readonly ExperienceEntry[] = [
     blurb:
       'UI components for an enterprise travel and booking platform. Implemented Server-Driven UI patterns and integrated conversational AI with Kore.ai for flight and hotel reservation flows.',
     tags: ['React', 'TypeScript', 'SDUI', 'GraphQL', 'AWS'],
+    isCurrent: true,
   },
   {
     id: 'masglobal',
@@ -57,7 +58,12 @@ export const EXPERIENCE_ENTRIES: readonly ExperienceEntry[] = [
   },
 ];
 
+/**
+ * Built from BASE_URL because the site is served from a sub-path on GitHub
+ * Pages. A root-absolute "/cv/…" resolves against the domain, not the project,
+ * and 404s in production.
+ */
 export const RESUME_LINK: ResumeLink = {
   label: 'Download full résumé ↓',
-  href: '/cv/CV-David-Munoz-Barco.pdf',
+  href: `${import.meta.env.BASE_URL}cv/CV-David-Munoz-Barco.pdf`,
 };

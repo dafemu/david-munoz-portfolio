@@ -9,6 +9,8 @@
   color: var(--color-text);
 }
 
-.logo__suffix {
-  color: var(--color-accent);
+.logo__caret {
+  /* Slightly narrower than the text caret: at the logo's tracking a full-width
+     block reads as a redaction bar rather than a cursor. */
+  width: 0.36em;
 }

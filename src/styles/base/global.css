@@ -1,5 +1,8 @@
 html {
   scroll-behavior: smooth;
+  /* Tells the browser to render scrollbars, form controls and the like in
+     their dark variants — without it they ship light on a dark page. */
+  color-scheme: dark;
 }
 
 body {
@@ -7,6 +10,20 @@ body {
   color: var(--color-text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  /* Removes the 300ms double-tap delay without disabling pinch zoom. */
+  touch-action: manipulation;
+  /* Contains sideways overflow at the root, where it propagates to the
+     viewport. `clip` rather than `hidden` so no scroll container is created. */
+  overflow-x: clip;
+}
+
+/**
+ * Anchored sections clear the sticky header. Without this, jumping to
+ * "#about" parks the heading underneath it.
+ */
+:target,
+section[id] {
+  scroll-margin-top: var(--layout-sticky-offset);
 }
 
 ::selection {
@@ -26,6 +43,33 @@ a:hover {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: var(--radius-sm);
+}
+
+/**
+ * Skip link — offscreen until focused, then pinned to the top-left. With six
+ * sections and six nav items, keyboard users otherwise tab through the whole
+ * header on every visit.
+ */
+.skip-link {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  z-index: 40;
+  padding: var(--space-md) var(--space-2xl);
+  border-radius: var(--radius-md);
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-mono-sm);
+  transform: translateY(calc(-100% - var(--space-2xl)));
+  transition: transform var(--duration-fast) var(--ease-reveal);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+  color: var(--color-text-on-accent);
 }
 
 @media (prefers-reduced-motion: reduce) {

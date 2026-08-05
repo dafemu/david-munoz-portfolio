@@ -1,0 +1,32 @@
+.block-cursor {
+  display: inline-block;
+  /* Sized in em so it tracks whatever text it sits beside. */
+  width: 0.5em;
+  height: 1em;
+  margin-left: 0.12em;
+  background: var(--color-accent);
+  vertical-align: text-bottom;
+  translate: 0 -0.08em;
+}
+
+.block-cursor--blinking {
+  animation: cursor-blink var(--duration-caret) steps(1, end) infinite;
+}
+
+@keyframes cursor-blink {
+  0%,
+  55% {
+    opacity: 1;
+  }
+  56%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* A blinking block is exactly the kind of repeating motion this opts out of. */
+@media (prefers-reduced-motion: reduce) {
+  .block-cursor--blinking {
+    animation: none;
+  }
+}

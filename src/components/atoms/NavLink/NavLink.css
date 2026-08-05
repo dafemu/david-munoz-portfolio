@@ -1,4 +1,11 @@
+/**
+ * Vertical padding is load-bearing, not decorative: as bare text these links
+ * measured 82×16px, under the 24×24 minimum of WCAG 2.2 SC 2.5.8. The block
+ * display makes the padding count toward the hit area.
+ */
 .nav-link {
+  display: inline-block;
+  padding: var(--space-xs) 0;
   color: var(--color-text-dim);
   transition: color var(--duration-base) var(--ease-standard);
 }

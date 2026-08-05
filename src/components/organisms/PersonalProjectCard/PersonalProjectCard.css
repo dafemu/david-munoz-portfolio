@@ -24,19 +24,32 @@
 /* ---- Media slot ---- */
 
 /**
- * Placeholder until the real capture exists. Dashed edges read as "not final",
- * and the aspect-ratio already reserves the exact space the media will take,
- * so dropping it in later won't reflow the card.
+ * Placeholder until the real capture exists. Reads as a deliberate empty
+ * frame rather than an unfinished one: the project name sits large and faint
+ * behind a dot grid. The aspect-ratio reserves the exact space the media will
+ * take, so dropping it in later won't reflow the card.
  */
 .personal-project-card__media {
+  position: relative;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: var(--space-xs);
+  overflow: hidden;
   padding: var(--space-xl);
-  border: 1px dashed var(--color-border-strong);
+  border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-md);
-  background: var(--color-surface-raised);
+  background:
+    radial-gradient(var(--color-grid-dot) 1px, transparent 1px) 0 0 / 16px 16px,
+    var(--color-surface-raised);
+}
+
+.personal-project-card__media-mark {
+  font-size: var(--fs-role);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-snug);
+  color: var(--color-text-fainter);
+  text-align: center;
+  text-wrap: balance;
 }
 
 /* Browser-shaped: dashboards and storefronts. */
@@ -54,31 +67,6 @@
   width: 100%;
   max-width: 240px;
   margin-inline: auto;
-}
-
-.personal-project-card__media-badge {
-  align-self: flex-start;
-  padding: var(--space-3xs) var(--space-sm);
-  border-radius: var(--radius-pill);
-  background: var(--color-accent-soft);
-  color: var(--color-accent);
-  font-family: var(--font-mono);
-  font-size: var(--fs-mono-xs);
-  letter-spacing: var(--ls-mono-sm);
-}
-
-.personal-project-card__media-todo {
-  margin: 0;
-  font-family: var(--font-mono);
-  font-size: var(--fs-mono-xs);
-  line-height: var(--lh-snug);
-  color: var(--color-text-faint);
-}
-
-/* The second capture is a separate deliverable, so it gets its own rule. */
-.personal-project-card__media-todo--secondary {
-  padding-top: var(--space-xs);
-  border-top: 1px solid var(--color-border-hairline);
 }
 
 /* ---- Body ---- */

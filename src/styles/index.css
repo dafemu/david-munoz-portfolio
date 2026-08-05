@@ -4,6 +4,7 @@
 @import './tokens/radius.css';
 @import './tokens/motion.css';
 
+@import './base/fonts.css';
 @import './base/reset.css';
 @import './base/global.css';
 @import './base/animations.css';

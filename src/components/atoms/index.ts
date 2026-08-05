@@ -11,3 +11,6 @@ export { BulletList } from './BulletList';
 export { StackChip } from './StackChip';
 export { LocationBadge } from './LocationBadge';
 export { PageBackdrop } from './PageBackdrop';
+export { MenuToggle } from './MenuToggle';
+export { TypedLines } from './TypedLines';
+export { BlockCursor } from './BlockCursor';

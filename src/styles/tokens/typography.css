@@ -9,6 +9,9 @@
   --fs-lead: clamp(17px, 1.6vw, 21px);
   --fs-statement: clamp(19px, 2.1vw, 27px);
   --fs-email: clamp(20px, 3vw, 34px);
+  /* The hero's typed tree: a step above the mono labels, since it sits
+     directly under the display headline and has to hold its own there. */
+  --fs-typed: clamp(13px, 1.2vw, 15px);
 
   /* Fixed sizes */
   --fs-stat: 30px;
@@ -30,12 +33,16 @@
   --fs-mono-md: 13px;
   --fs-mono: 12px;
   --fs-mono-sm: 12px;
-  --fs-mono-xs: 11px;
+  /* 12px is the floor now: the old 11px step sat below what wide-tracked mono
+     stays comfortable at, and the same reasoning applies one size down. */
+  --fs-mono-xs: 12px;
 
   /* Weights */
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
+  /* Reserved for the display headline, the one place that should feel loud. */
+  --fw-bold: 700;
 
   /* Line heights */
   --lh-display: 0.98;
@@ -45,6 +52,8 @@
   --lh-snug: 1.65;
   --lh-base: 1.7;
   --lh-relaxed: 1.75;
+  /* Airy enough that the hero's typed tree reads as a list, not a paragraph. */
+  --lh-typed: 1.9;
 
   /* Letter spacing */
   --ls-display: -0.035em;

@@ -1,9 +1,13 @@
+/**
+ * Deliberately static. The portrait used to drift up and down on a 7s loop,
+ * which competed with the hero copy for attention and read as decoration —
+ * the glow below carries the same depth without the movement.
+ */
 .profile-card {
   position: relative;
   flex: 0 1 var(--size-profile);
   width: min(100%, var(--size-profile));
   margin: 0 auto;
-  animation: floaty var(--duration-floaty) ease-in-out infinite;
 }
 
 .profile-card__glow {

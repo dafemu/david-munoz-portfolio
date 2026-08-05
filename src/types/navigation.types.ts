@@ -9,9 +9,9 @@ export interface NavigationItem {
 /** Site-wide identity and structural configuration. */
 export interface SiteConfig {
   readonly brandName: string;
-  readonly brandSuffix: string;
   readonly navigation: readonly NavigationItem[];
   readonly contactNavLabel: string;
+  readonly skipLinkLabel: string;
   readonly heroSectionId: string;
   readonly footer: FooterConfig;
   readonly features: FeatureFlags;

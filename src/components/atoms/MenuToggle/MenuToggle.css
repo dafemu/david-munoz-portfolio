@@ -1,0 +1,58 @@
+/* 44px square: the comfortable touch target, and it fixes the sub-24px
+   targets the text-only nav links had at this breakpoint. */
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  transition: color var(--duration-base) var(--ease-standard);
+}
+
+.menu-toggle:hover {
+  color: var(--color-accent);
+}
+
+.menu-toggle__bars {
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 14px;
+}
+
+.menu-toggle__bar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  border-radius: var(--radius-pill);
+  background: currentColor;
+  /* Rotating about the bar's own centre is what makes the two halves meet. */
+  transform-origin: center;
+  transition:
+    transform var(--duration-base) var(--ease-reveal),
+    width var(--duration-base) var(--ease-reveal);
+}
+
+.menu-toggle__bar:first-child {
+  top: 0;
+}
+
+.menu-toggle__bar:last-child {
+  bottom: 0;
+  /* Shorter at rest so the closed icon reads as a menu, not an equals sign. */
+  width: 70%;
+}
+
+/* Both bars travel to the vertical centre, then cross. */
+.menu-toggle--open .menu-toggle__bar:first-child {
+  transform: translateY(6.25px) rotate(45deg);
+}
+
+.menu-toggle--open .menu-toggle__bar:last-child {
+  width: 100%;
+  transform: translateY(-6.25px) rotate(-45deg);
+}

@@ -1,0 +1,78 @@
+.typed-lines {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-typed);
+  line-height: var(--lh-typed);
+  letter-spacing: var(--ls-mono-xs);
+  color: var(--color-text-body);
+}
+
+/**
+ * Each line holds a full line box whether or not it has been typed yet, so
+ * the block occupies its final height from the first frame and the copy
+ * below never jumps.
+ */
+.typed-lines__line {
+  display: block;
+  min-height: calc(var(--lh-typed) * 1em);
+  white-space: pre;
+}
+
+/* The first line is the role itself — it carries the weight. */
+.typed-lines__line:first-child {
+  color: var(--color-text);
+}
+
+/**
+ * The "└─" connector, drawn rather than typed. As box drawing characters they
+ * fell outside the font's subset and landed in a fallback face at a different
+ * advance width, so the tree never lined up. Two borders always do.
+ */
+.typed-lines__line--branch {
+  position: relative;
+  padding-left: 2.1ch;
+}
+
+/* Trunk: runs the full line so consecutive branches join into one stem. */
+.typed-lines__line--branch::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.35ch;
+  border-left: 1px solid var(--color-accent-alt);
+}
+
+/* The last branch closes the tree, so its trunk stops at the elbow. */
+.typed-lines__line--branch:last-child::before {
+  bottom: auto;
+  height: calc(var(--lh-typed) * 0.5em);
+}
+
+/* Elbow: meets the text's optical centre, pointing at the first glyph. */
+.typed-lines__line--branch::after {
+  content: '';
+  position: absolute;
+  top: calc(var(--lh-typed) * 0.5em);
+  left: 0.35ch;
+  width: 1.1ch;
+  border-top: 1px solid var(--color-accent-alt);
+}
+
+/* No connector until its line starts typing. */
+.typed-lines__line--pending::before,
+.typed-lines__line--pending::after {
+  opacity: 0;
+}
+
+/* Visually hidden, still announced. */
+.typed-lines__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

@@ -6,6 +6,8 @@ export interface ExperienceEntry {
   readonly company: string;
   readonly blurb: string;
   readonly tags: readonly string[];
+  /** Marks the live role — its node on the timeline is the only lit one. */
+  readonly isCurrent?: boolean;
 }
 
 export interface ResumeLink {

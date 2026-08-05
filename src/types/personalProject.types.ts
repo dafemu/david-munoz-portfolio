@@ -20,7 +20,10 @@ export interface PersonalProject {
   readonly githubUrl?: string;
   readonly mediaType: PersonalProjectMediaType;
   readonly mediaAspect: PersonalProjectMediaAspect;
-  /** Visible reminder of exactly what still needs recording or capturing. */
+  /**
+   * Working note describing the capture still owed. Never rendered — it is a
+   * reminder for whoever records the media, not copy for the visitor.
+   */
   readonly mediaTodo: string;
   /** Second capture for projects whose story needs two frames (see Vebt's widget). */
   readonly secondaryMediaTodo?: string;

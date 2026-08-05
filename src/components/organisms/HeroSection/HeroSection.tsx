@@ -1,4 +1,4 @@
-import { Heading, Text } from '@/components/atoms';
+import { Heading, Text, TypedLines } from '@/components/atoms';
 import { AvailabilityBadge, HeroActions, ProfileCard, StatList } from '@/components/molecules';
 import type { HeroContent, HeroStat, WithClassName } from '@/types';
 import { cx } from '@/utils';
@@ -31,6 +31,11 @@ export const HeroSection = ({
         <br />
         {content.nameLines[1]}
       </Heading>
+      <TypedLines
+        className="hero__role"
+        lines={content.roleLines}
+        label={content.roleLines.join('. ')}
+      />
       <Text variant="lead">
         {content.introBefore}
         <strong className="hero__highlight">{experienceHighlight}</strong>

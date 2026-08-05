@@ -15,12 +15,17 @@ export interface HeroStat {
 export interface ProfilePhoto {
   readonly src: string;
   readonly alt: string;
+  /** Intrinsic pixels of the asset — rendered as width/height attrs to reserve space. */
+  readonly width: number;
+  readonly height: number;
 }
 
 export interface HeroContent {
   readonly availabilityLabel: string;
   /** Name split into the two lines of the original headline. */
   readonly nameLines: readonly [string, string];
+  /** Role tree typed out beneath the name, one line at a time. */
+  readonly roleLines: readonly string[];
   /** Intro copy split around the highlighted experience figure. */
   readonly introBefore: string;
   readonly introAfter: string;

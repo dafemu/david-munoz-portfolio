@@ -1,5 +1,7 @@
 .location-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
   padding: var(--space-sm) var(--space-xl);
   border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-md);
@@ -9,4 +11,9 @@
   letter-spacing: var(--ls-mono-sm);
   color: var(--color-text-muted);
   white-space: nowrap;
+}
+
+.location-badge__pin {
+  flex-shrink: 0;
+  color: var(--color-accent);
 }

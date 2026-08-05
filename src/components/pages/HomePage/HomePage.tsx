@@ -27,7 +27,7 @@ import {
   STACK_GROUPS,
   TRACKED_SECTION_IDS,
 } from '@/data';
-import { useHeroStats, useYearsOfExperience } from '@/hooks';
+import { useHashLanding, useHeroStats, useYearsOfExperience } from '@/hooks';
 
 const CONTACT_SECTION_ID = 'contact';
 
@@ -43,15 +43,16 @@ const SECTION_LABELS = {
 
 /** The only place where content sources meet presentation components. */
 export const HomePage = () => {
+  useHashLanding();
   const yearsOfExperience = useYearsOfExperience();
   const heroStats = useHeroStats();
 
   return (
     <PortfolioTemplate
+      skipLinkLabel={SITE_CONFIG.skipLinkLabel}
       header={
         <SiteHeader
           brandName={SITE_CONFIG.brandName}
-          brandSuffix={SITE_CONFIG.brandSuffix}
           heroSectionId={SITE_CONFIG.heroSectionId}
           navigation={SITE_CONFIG.navigation}
           contactLabel={SITE_CONFIG.contactNavLabel}

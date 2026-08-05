@@ -13,6 +13,8 @@ export interface ButtonProps extends WithClassName {
   readonly isExternal?: boolean;
   /** For destinations that don't exist yet — renders inert, never a dead link. */
   readonly isDisabled?: boolean;
+  /** Side effect on activation; navigation still happens via the href. */
+  readonly onClick?: () => void;
 }
 
 export const Button = ({
@@ -21,6 +23,7 @@ export const Button = ({
   children,
   isExternal = false,
   isDisabled = false,
+  onClick,
   className,
 }: ButtonProps) => {
   const classNames = cx(
@@ -44,6 +47,7 @@ export const Button = ({
     <a
       className={classNames}
       href={href}
+      onClick={onClick}
       {...(isExternal ? { target: '_blank', rel: 'noreferrer noopener' } : {})}
     >
       {children}
